@@ -10,6 +10,10 @@
   "engines": {
     "node": ">=0.12"
   },
+  "main": "lib/euler31.js",
+  "bin": {
+    "euler31": "bin/euler31"
+  },
   "scripts": {
     "exec": "exec"
   },
