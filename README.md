@@ -1,4 +1,4 @@
-# euler31 - a brute force solution to Project Euler #31
+# euler31 - an enumerative (shitty) solution to Project Euler #31
 
 https://projecteuler.net/problem=31
 
