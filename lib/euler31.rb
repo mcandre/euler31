@@ -40,7 +40,7 @@ module Euler31
       if ch.size == 0
         nil
       else
-        ch.collect { |factors| factors << candidate; factors }.uniq
+        ch.collect { |factors| factors << candidate }.uniq
       end
     end
 
