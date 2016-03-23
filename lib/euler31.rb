@@ -44,7 +44,7 @@ module Euler31
       end
     end
 
-    non_nil_non_trivial_factors = non_trivial_factors.flatten.reject { |factor| factor.nil? }
+    non_nil_non_trivial_factors = non_trivial_factors.flatten.compact
 
     unique_non_nil_non_trivial_factors = Set.new(non_nil_non_trivial_factors)
 
