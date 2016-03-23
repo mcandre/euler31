@@ -5,6 +5,9 @@ https://projecteuler.net/problem=31
 # EXAMPLE
 
 ```
+$ bundle
+$ rake install
+
 $ time bin/euler31 -t
 Passed all tests
 
