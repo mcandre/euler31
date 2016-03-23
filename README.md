@@ -8,8 +8,8 @@ https://projecteuler.net/problem=31
 $ time bin/euler31 -t
 Passed all tests
 
-real	0m0.070s
-user	0m0.050s
+real	0m0.064s
+user	0m0.045s
 sys	0m0.014s
 
 $ bin/euler31 200
