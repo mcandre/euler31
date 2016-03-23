@@ -24,11 +24,13 @@ module Euler31
 
     exact_change = candidates.bsearch { |coin| coin == value }
 
-    exact_change_set = if exact_change
-                         Set.new([Multiset.new([exact_change])])
+    exact_change_array = if exact_change
+                         [Multiset.new([exact_change])]
                        else
-                         Set.new
+                         []
                        end
+
+    exact_change_set = Set.new(exact_change_array)
 
     remaining_candidates = candidates - [exact_change]
 
