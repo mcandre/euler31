@@ -1,6 +1,5 @@
 require 'set'
 require 'multiset'
-require 'memist'
 
 require_relative 'cli'
 
@@ -23,39 +22,39 @@ module Euler31
 
   @memo = {}
 
-  def self.change(coins, value)
-    key = [coins, value]
+  def self._change(coins, value)
+    exact_change, candidates = coins.partition { |coin| coin == value }
 
-    if @memo.has_key?(key)
-      @memo[key]
-    else
-      candidates = coins.select { |coin| value - coin >= 0 }
+    leftover_candidates = candidates.select { |coin| coin <= value }
 
-      key2 = [candidates, value]
 
-      if @memo.has_key?(key2)
-        @memo[key2]
-      else
-        exact_change, remaining_candidates = candidates.partition { |coin| coin == value }
+    exact_change_array = if exact_change.length > 0
+                         [Multiset.new([exact_change.first])]
+                       else
+                         []
+                       end
 
-        exact_change_array = if exact_change.length > 0
-                             [Multiset.new([exact_change.first])]
-                           else
-                             []
-                           end
+    non_trivial_factors = Set.new
 
-        non_trivial_factors = Set.new
+    leftover_candidates.each do |candidate|
+      diff = value - candidate
+      remaining_candidates = leftover_candidates.select { |c| c <= diff }
+      ch = change(remaining_candidates, diff)
 
-        remaining_candidates.each do |candidate|
-          ch = change(remaining_candidates, value - candidate)
-
-          ch.each do |factors|
-            non_trivial_factors << (factors.dup << candidate)
-          end
-        end
-
-        @memo[key2] = @memo[key] = Set.new(exact_change_array) | non_trivial_factors
+      ch.each do |factors|
+        non_trivial_factors << (factors.dup << candidate)
       end
+    end
+
+    Set.new(exact_change_array) | non_trivial_factors
+  end
+
+  # Memoized
+  def self.change(coins, value)
+    if @memo.has_key?(value)
+      @memo[value]
+    else
+      @memo[value] = _change(coins, value)
     end
   end
 end
