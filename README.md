@@ -21,4 +21,9 @@ $ bin/euler31 200
 
 # REQUIREMENTS
 
-* [Ruby](http://www.ruby-lang.org/en/) 2+
+* [ruby](http://www.ruby-lang.org/en/) 2+
+
+## Optional
+
+* [pargs](https://github.com/mcandre/pargs)
+* [editorconfig-tools](https://www.npmjs.com/package/editorconfig-tools)
