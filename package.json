@@ -1,21 +1,16 @@
 {
-  "name": "euler31",
-  "description": "an enumerative solution to Project Euler #31",
-  "version": "0.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mcandre/euler31.git"
-  },
-  "author": "Andrew Pennebaker <andrew.pennebaker@gmail.com>",
-  "directories": {
-    "lib": "."
-  },
-  "engines": {
-    "node": ">=4.5.0"
-  },
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {
-    "editorconfig-tools": ">= 0.1.1"
-  }
+    "name": "dotfiles",
+    "description": "Example configurations",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mcandre/dotfiles.git"
+    },
+    "author": "Andrew Pennebaker <andrew.pennebaker@gmail.com>",
+    "engines": {
+        "node": ">=6.9.1"
+    },
+    "devDependencies": {
+        "eclint": "~2.8.1"
+    }
 }
